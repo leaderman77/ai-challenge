@@ -27,6 +27,7 @@ The ontology entries include:
 - Obsolescence ('is_obsolete')
 
 ## Methodology 
+### Develop a Correctness Metric
 The solution implements a hierarchical matching system with multiple validation levels:
 
 1. Exact Matching
@@ -38,9 +39,21 @@ The solution implements a hierarchical matching system with multiple validation 
 7. Synonym Matching + Semantic Matching with BERT
 8. Ensemble Matcher
 
-These methods are applied to evaluate the correctness of the trait mappings in the input CSV files. The correctness scores are then aggregated to rank the overall quality of the mappings in each file.
+These methods are applied to evaluate the correctness of the trait mappings in the input CSV files. 
 
+### Rank CSVs Based on Correctness
+The correctness scores are then aggregated to rank the overall quality of the mappings in each file.
+
+### Propose a Method to Correct Errors
 Error analysis is performed to identify common mismatch patterns and areas for improvement. A BERT-based semantic similarity approach is proposed to systematically correct the errors.
+
+### Prediction of TO Mappings for Given Trait Terms
+The prediction of trait ontology mappings was approached using two distinct methods:
+
+1. **Domain-Specific Model:** Utilized the domain-specific Hugging Face model `cambridgeltl/SapBERT-from-PubMedBERT-fulltext`, optimized for biomedical and domain-specific embeddings.
+2. **OpenAI GPT-4 Embeddings:** Leveraged OpenAI's GPT-4 model with embeddings generated using the `text-embedding-ada-002` (3072-dimensional).
+
+Apply your methods to predict TO mappings for a set of challenging trait terms that do not have exact matches in TO. The aim is to provide a well-structured output for a manual data curation step, helping to reduce the time required for manual review.
 
 ## Results
 ### Model Performance Analysis
