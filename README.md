@@ -9,8 +9,6 @@ This project provides a comprehensive solution for evaluating the correctness of
   - [Model Performance Analysis](#model-performance-analysis)
   - [Prediction of TO Mappings](#prediction-of-to-mappings)
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Data
 The project utilizes the following data:
